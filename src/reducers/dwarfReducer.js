@@ -11,7 +11,7 @@ const initialState = {
     {
       name: "Ammon",
       height: "5",
-      clan: "... other",
+      clan: "Clanless",
       occupation: "Miner",
       beardColor: "green",
       id: 2
@@ -33,7 +33,7 @@ const initialState = {
     { name: "MacDumathoin" },
     { name: "McGuillicuddy" },
     { name: "Oakenshield" },
-    { name: "Unclanned", cosmetic: "... other" }
+    { name: "Clanless", cosmetic: "... other" }
   ],
 
   occupations: [

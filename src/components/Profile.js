@@ -104,7 +104,7 @@ const Profile = ({ addDwarf, history, clans, occupations, beards }) => {
                   --select--
                 </option>
                 {clans.map(cln => (
-                  <option key={cln.name}>
+                  <option key={cln.name} value={cln.name}>
                     {cln.cosmetic ? cln.cosmetic : cln.name}
                   </option>
                 ))}
