@@ -11,7 +11,14 @@ import {
   Button
 } from "react-bootstrap";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import Beard from "./Beard.js";
+
+const mapStateToProps = state => ({
+  clans: state.clans,
+  occupations: state.occupations,
+  beards: state.beards
+});
 
 const mapDispatchToProps = dispatch => ({
   addDwarf: dwrf =>
@@ -21,7 +28,7 @@ const mapDispatchToProps = dispatch => ({
     })
 });
 
-const Profile = ({ addDwarf }) => {
+const Profile = ({ addDwarf, history, clans, occupations, beards }) => {
   let name;
   let height;
   let clan;
@@ -38,42 +45,8 @@ const Profile = ({ addDwarf }) => {
       occupation: occupation.value,
       beardColor: beardColor
     });
+    history.push("/cast");
   };
-
-  let clans = [
-    "Battlehammer",
-    "Bouldershoulder",
-    "Bronzebottom",
-    "MacDumathoin",
-    "McGuillicuddy",
-    "Oakenshield",
-    "... other"
-  ];
-
-  let occupations = [
-    "Beard Stylist",
-    "Brewer",
-    "Miner",
-    "Fighter",
-    "Smith, Armor",
-    "Smith, Black",
-    "Smith, Gem",
-    "Smith, Weapon",
-    "... other"
-  ];
-
-  let beards = [
-    "red",
-    "orange",
-    "yellow",
-    "green",
-    "blue",
-    "purple",
-    "brown",
-    "white",
-    "grey",
-    "black"
-  ];
 
   return (
     <Jumbotron>
@@ -130,7 +103,11 @@ const Profile = ({ addDwarf }) => {
                 <option value={-1} disabled="disabled">
                   --select--
                 </option>
-                {clans.map(cln => <option key={cln}>{cln}</option>)}
+                {clans.map(cln => (
+                  <option key={cln.name}>
+                    {cln.cosmetic ? cln.cosmetic : cln.name}
+                  </option>
+                ))}
               </FormControl>
             </Col>
           </FormGroup>
@@ -184,4 +161,6 @@ const Profile = ({ addDwarf }) => {
   );
 };
 
-export default connect(null, mapDispatchToProps)(Profile);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(Profile)
+);

@@ -16,11 +16,12 @@ const Cast = ({ dwarves }) => {
             <Panel>
               <Panel.Heading>
                 <div>
-                  <h3>
+                  <h4>
+                    {dwrf.id}
                     <Beard height={20} color={dwrf.beardColor} />
                     {dwrf.name} {dwrf.clan},
-                  </h3>
-                  the {dwrf.occupation}
+                  </h4>
+                  <h6>the {dwrf.occupation}</h6>
                 </div>
               </Panel.Heading>
             </Panel>
