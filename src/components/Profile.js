@@ -127,7 +127,11 @@ const Profile = ({ addDwarf, history, clans, occupations, beards }) => {
                 <option value={-1} disabled="disabled">
                   --select--
                 </option>
-                {occupations.map(occ => <option key={occ}>{occ}</option>)}
+                {occupations.map(occ => (
+                  <option key={occ.name} value={occ.name}>
+                    {occ.cosmetic ? occ.cosmetic : occ.name}
+                  </option>
+                ))}
               </FormControl>
             </Col>
           </FormGroup>

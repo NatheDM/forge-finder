@@ -18,7 +18,7 @@ const Cast = ({ dwarves }) => {
               <Panel.Heading>
                 <div>
                   <h4>
-                    {dwrf.id}
+                    {dwrf._id}
                     <Beard height={20} color={dwrf.beardColor} />
                     {dwrf.name} {dwrf.clan},
                   </h4>

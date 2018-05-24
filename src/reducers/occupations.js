@@ -1,13 +1,13 @@
 const occupationArray = [
-  "Armorsmith",
-  "Beard Stylist",
-  "Blacksmith",
-  "Brewer",
-  "Fighter",
-  "Gemsmith",
-  "Miner",
-  "Weaponsmith",
-  "... other"
+  { name: "Armorsmith" },
+  { name: "Beard Stylist" },
+  { name: "Blacksmith" },
+  { name: "Brewer" },
+  { name: "Fighter" },
+  { name: "Gemsmith" },
+  { name: "Miner" },
+  { name: "Weaponsmith" },
+  { name: "Likely Unemployed", cosmetic: "... other" }
 ];
 
 const occupations = (state = occupationArray, action) => {
