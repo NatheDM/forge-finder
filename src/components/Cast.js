@@ -11,6 +11,7 @@ const Cast = ({ dwarves }) => {
   return (
     <Jumbotron>
       <Grid>
+        {!dwarves.length && <h3>No dwarves found</h3>}
         {dwarves.map(dwrf => (
           <Col sm={4}>
             <Panel>

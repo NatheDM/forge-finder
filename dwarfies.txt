@@ -1,0 +1,24 @@
+    {
+      name: "Butts",
+      height: "3",
+      clan: "Bronzebottom",
+      occupation: "Beard Stylist",
+      beardColor: "brown",
+      id: 1
+    },
+    {
+      name: "Ammon",
+      height: "5",
+      clan: "Clanless",
+      occupation: "Miner",
+      beardColor: "green",
+      id: 2
+    },
+    {
+      name: "Bruenor",
+      height: "4'6",
+      clan: "Battlehammer",
+      occupation: "Fighter",
+      beardColor: "red",
+      id: 3
+    }
