@@ -6,7 +6,7 @@ const dwarves = (state = [], action) => {
   switch (action.type) {
     case "ADD_DWARF":
       dwarfId++;
-      services.dwarves.add({ ...action.payload, _id: 0 });
+      services.dwarves.add({ ...action.payload }); //, _id: 0 <-- move back inside of object for fun!
       return [...state, { ...action.payload, id: dwarfId }];
     case "LOAD_DWARF":
       if (action.payload.length > 0) {
